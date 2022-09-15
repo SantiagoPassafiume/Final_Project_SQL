@@ -36,7 +36,7 @@ CREATE TABLE `transaction` (
 
 ALTER TABLE `account`
 ADD FOREIGN KEY (dni) REFERENCES client(dni), 
-ADD FOREIGN KEY accountaccount(id_branch) REFERENCES branch(id_branch);
+ADD FOREIGN KEY (id_branch) REFERENCES branch(id_branch);
 
 ALTER TABLE `client`
 ADD FOREIGN KEY (id_account) REFERENCES account(id_account);
