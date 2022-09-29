@@ -1,5 +1,5 @@
 CREATE OR REPLACE VIEW all_banks AS
-	(SELECT bank_name, id_bank FROM bank);
+	(SELECT id_bank, bank_name FROM bank);
   
 CREATE OR REPLACE VIEW all_branches AS
 	(SELECT id_branch, branch_name, id_bank FROM branch);
