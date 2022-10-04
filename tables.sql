@@ -30,7 +30,7 @@ CREATE TABLE `transaction` (
 	id_transaction INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
 	id_account INT NOT NULL,
 	dni INT NOT NULL,
-	amount DECIMAL(10,0) NOT NULL,
+	amount DECIMAL(10,2) NOT NULL,
 	`date` DATE NOT NULL
 );
 
