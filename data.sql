@@ -11,4 +11,4 @@ INSERT INTO `client` (dni, id_account, client_name)
 VALUES(32423434, 1, "Pedro Suarez"),(31234334, 2, "Ismael Rosas"),(30232242, 3, "Carlos Fernandez");
 
 INSERT INTO `transaction` (id_transaction, id_account, dni, amount, `date`)
-VALUES(1,3,32423434,1500,'2022-01-01'),(2,2,31234334,3000,'2021-02-02'),(3,1,30232242,4500,'2020-03-03');
+VALUES(1,3,32423434,1500.11,'2022-01-01'),(2,2,31234334,3000.12,'2021-02-02'),(3,1,30232242,4500.13,'2020-03-03');
