@@ -11,11 +11,11 @@ BEGIN
 
 	SET @order_by = CONCAT(' ORDER BY ', p_order_column, ' ', p_order_type);
     
-    SET @clause = CONCAT('SELECT dni, id_account, client_name FROM `client`', @order_by);
+	SET @clause = CONCAT('SELECT dni, id_account, client_name FROM `client`', @order_by);
     
-    PREPARE my_clause FROM @clause;
-    EXECUTE my_clause;
-    DEALLOCATE PREPARE my_clause;
+	PREPARE my_clause FROM @clause;
+	EXECUTE my_clause;
+	DEALLOCATE PREPARE my_clause;
 
 END$$
 DELIMITER ;
@@ -37,22 +37,22 @@ CREATE PROCEDURE create_new_transaction(IN parameter_dni INT, IN parameter_amoun
 BEGIN
 
 	DECLARE variable_dni INT;
-    DECLARE variable_id_account INT;
+    	DECLARE variable_id_account INT;
     
 	SELECT dni
 	INTO variable_dni
 	FROM `client`
-    WHERE dni = parameter_dni;
+   	WHERE dni = parameter_dni;
     
-    IF variable_dni > 0 THEN
+	IF variable_dni > 0 THEN
 		SELECT id_account
-        INTO variable_id_account
-        FROM `account`
-        WHERE dni = parameter_dni;
+        	INTO variable_id_account
+        	FROM `account`
+        	WHERE dni = parameter_dni;
         
 		INSERT INTO `transaction` VALUES(NULL, variable_id_account, variable_dni, parameter_amount, CURDATE());
         
-    ELSE
+    	ELSE
 		SELECT 'Transaction rejected because there is no client with the DNI supplied.' AS error_msg;
 	END IF;
 		
