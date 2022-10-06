@@ -22,7 +22,9 @@ DELIMITER ;
 
 
 
--- Segundo Stored Procedure:
+
+
+-- Second Stored Procedure:
 -- Crea una nueva transacción a partir del DNI de un cliente registrado y una cantidad de dinero.
 -- Si el DNI no existe (el cliente no existe), rechaza la transacción con un error.
 --
