@@ -6,7 +6,7 @@
 DROP PROCEDURE IF EXISTS ordered_list_of_clients;
 
 DELIMITER $$
-CREATE PROCEDURE ordered_list_of_clients (IN p_order_column VARCHAR(100), IN p_order_type varchar(4))
+CREATE PROCEDURE ordered_list_of_clients(IN p_order_column VARCHAR(100), IN p_order_type varchar(4))
 BEGIN
 
 	SET @order_by = CONCAT(' ORDER BY ', p_order_column, ' ', p_order_type);
