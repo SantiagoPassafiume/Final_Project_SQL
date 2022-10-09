@@ -1,3 +1,7 @@
+/*
+Script de inserción de datos.
+*/
+
 INSERT INTO banks (id, bank_name)
 VALUES(1, "BBVA"),(2, "Santander"),(3, "Galicia");
 
