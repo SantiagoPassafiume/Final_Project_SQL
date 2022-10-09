@@ -1,3 +1,7 @@
+/*
+La función "get_highest_transaction_in_year" toma como input un año (ejemplo: 2022) y devuelve la transacción con el mayor "amount" de ese año.
+*/
+
 DELIMITER $$
 CREATE FUNCTION get_highest_transaction_in_year (year_of_transaction INT)
 RETURNS DECIMAL(10,2)
@@ -17,6 +21,12 @@ BEGIN
     
 END$$
 DELIMITER ;
+
+
+/*
+La función "get_average_transaction_in_year" toma como input un año (ejemplo: 2022) y devuelve el promedio entre los montos de las transacciones
+del mismo.
+*/
 
 DELIMITER $$
 CREATE FUNCTION get_average_transaction_in_year (year_of_transaction INT)
