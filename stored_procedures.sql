@@ -1,7 +1,9 @@
--- First Stored Procedure:
--- Devuelve la lista completa de clientes, ordenandola en base al primer parámetro, y decidiendo si es ascendente o descendente en el segundo parámetro.
---
--- Ejemplo de uso: CALL ordered_list_of_clients('dni', 'ASC');
+/* 
+Primer Stored Procedure:
+Devuelve la lista completa de clientes, ordenandola en base al primer parámetro, y decidiendo si es ascendente o descendente en el segundo parámetro.
+
+Ejemplo de uso: CALL ordered_list_of_clients('dni', 'ASC');
+*/
 
 DROP PROCEDURE IF EXISTS ordered_list_of_clients;
 
@@ -23,12 +25,13 @@ DELIMITER ;
 
 
 
+/*
+Segundo Stored Procedure:
+Crea una nueva transacción a partir del DNI de un cliente registrado y una cantidad de dinero.
+Si el DNI no existe (el cliente no existe), rechaza la transacción con un error.
 
--- Second Stored Procedure:
--- Crea una nueva transacción a partir del DNI de un cliente registrado y una cantidad de dinero.
--- Si el DNI no existe (el cliente no existe), rechaza la transacción con un error.
---
--- Ejemplo de uso: CALL create_new_transaction(32423434, 10234.23);
+Ejemplo de uso: CALL create_new_transaction(32423434, 10234.23);
+*/
 
 DROP PROCEDURE IF EXISTS create_new_transaction;
 
