@@ -2,19 +2,19 @@ CREATE DATABASE bank_passafiume;
 USE bank_passafiume;
 
 CREATE TABLE banks (
-	id_bank INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
+	id INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
 	bank_name VARCHAR(60) NOT NULL
 );
 
 CREATE TABLE branches (
-	id_branch INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
+	id INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
 	branch_name VARCHAR(60) NOT NULL,
 	id_bank INT NOT NULL,
-	FOREIGN KEY (id_bank) REFERENCES bank(id_bank)
+	FOREIGN KEY (id_bank) REFERENCES banks(id)
 );
 
 CREATE TABLE accounts (
-	id_account INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
+	id INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
 	dni INT NOT NULL,
 	id_branch INT NOT NULL,
 	account_name VARCHAR(60) NOT NULL
@@ -27,7 +27,7 @@ CREATE TABLE clients (
 );
 
 CREATE TABLE transactions (
-	id_transaction INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
+	id INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
 	id_account INT NOT NULL,
 	dni INT NOT NULL,
 	amount DECIMAL(10,2) NOT NULL,
@@ -36,8 +36,8 @@ CREATE TABLE transactions (
 
 ALTER TABLE accounts
 ADD FOREIGN KEY (dni) REFERENCES clients(dni), 
-ADD FOREIGN KEY (id_branch) REFERENCES branches(id_branch);
+ADD FOREIGN KEY (id_branch) REFERENCES branches(id);
 
 ALTER TABLE clients
-ADD FOREIGN KEY (id_account) REFERENCES accounts(id_account);
+ADD FOREIGN KEY (id_account) REFERENCES accounts(id);
 
