@@ -11,7 +11,7 @@ BEGIN
 
 	SET @order_by = CONCAT(' ORDER BY ', p_order_column, ' ', p_order_type);
     
-	SET @clause = CONCAT('SELECT dni, id_account, client_name FROM `client`', @order_by);
+	SET @clause = CONCAT('SELECT dni, id_account, client_name FROM clients', @order_by);
     
 	PREPARE my_clause FROM @clause;
 	EXECUTE my_clause;
@@ -41,16 +41,16 @@ BEGIN
     
 	SELECT dni
 	INTO variable_dni
-	FROM `client`
+	FROM clients
    	WHERE dni = parameter_dni;
     
 	IF variable_dni > 0 THEN
 		SELECT id_account
         	INTO variable_id_account
-        	FROM `account`
+        	FROM accounts
         	WHERE dni = parameter_dni;
         
-		INSERT INTO `transaction` VALUES(NULL, variable_id_account, variable_dni, parameter_amount, CURDATE());
+		INSERT INTO transactions VALUES(NULL, variable_id_account, variable_dni, parameter_amount, CURDATE());
         
     	ELSE
 		SELECT 'Transaction rejected because there is no client with the DNI supplied.' AS error_msg;
