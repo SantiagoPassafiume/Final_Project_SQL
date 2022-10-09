@@ -45,7 +45,7 @@ BEGIN
    	WHERE dni = parameter_dni;
     
 	IF variable_dni > 0 THEN
-		SELECT id_account
+		SELECT id
         	INTO variable_id_account
         	FROM accounts
         	WHERE dni = parameter_dni;
