@@ -8,7 +8,7 @@ BEGIN
 
 	SELECT amount
 	INTO highest_transaction
-	FROM `transaction`
+	FROM transactions
 	WHERE YEAR(`date`) = year_of_transaction
 	ORDER BY amount DESC
 	LIMIT 1;
@@ -28,7 +28,7 @@ BEGIN
 
 	SELECT AVG(amount)
 	INTO average_transaction
-	FROM `transaction`
+	FROM transactions
 	WHERE YEAR(`date`) = year_of_transaction;
 
 	RETURN average_transaction;
