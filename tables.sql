@@ -1,3 +1,7 @@
+/*
+Script de creación de base de datos con sus tablas correspondientes.
+*/
+
 CREATE DATABASE bank_passafiume;
 USE bank_passafiume;
 
