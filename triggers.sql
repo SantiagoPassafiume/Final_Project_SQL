@@ -2,8 +2,8 @@ USE bank_passafiume;
 CREATE TABLE deleted_clients (
 	id INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
 	`date` DATE NOT NULL,
-    `time` TIME NOT NULL,
-    `user` VARCHAR(60) NOT NULL,
+	`time` TIME NOT NULL,
+	`user` VARCHAR(60) NOT NULL,
 	details VARCHAR(150) NOT NULL
     
 );
@@ -12,23 +12,23 @@ CREATE TABLE created_clients (
 	id INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
 	`date` DATE NOT NULL,
 	`time` TIME NOT NULL,
-    `user` VARCHAR(60) NOT NULL,
+	`user` VARCHAR(60) NOT NULL,
 	details VARCHAR(150) NOT NULL
 );
 
 CREATE TABLE deleted_accounts (
 	id INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
 	`date` DATE NOT NULL,
-    `time` TIME NOT NULL,
-    `user` VARCHAR(60) NOT NULL,
+	`time` TIME NOT NULL,
+	`user` VARCHAR(60) NOT NULL,
 	details VARCHAR(150) NOT NULL
 );
 
 CREATE TABLE created_accounts (
 	id INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
 	`date` DATE NOT NULL,
-    `time` TIME NOT NULL,
-    `user` VARCHAR(60) NOT NULL,
+	`time` TIME NOT NULL,
+	`user` VARCHAR(60) NOT NULL,
 	details VARCHAR(150) NOT NULL
 );
 
