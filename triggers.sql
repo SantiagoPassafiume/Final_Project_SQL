@@ -17,7 +17,7 @@ BEFORE DELETE ON clients
 FOR EACH ROW
 BEGIN
 	INSERT INTO deleted_clients
-    VALUES(NULL, CURDATE(), CONCAT('The client "', OLD.client_name, '" with the DNI "', OLD.dni, '" was deleted.'));
+	VALUES(NULL, CURDATE(), CONCAT('The client "', OLD.client_name, '" with the DNI "', OLD.dni, '" was deleted.'));
 END$$
 DELIMITER ;
 
@@ -28,6 +28,6 @@ BEFORE INSERT ON clients
 FOR EACH ROW
 BEGIN
 	INSERT INTO created_clients
-    VALUES(NULL, CURDATE(), CONCAT('The client "', NEW.client_name, '" with the DNI "', NEW.dni, '" was created.'));
+	VALUES(NULL, CURDATE(), CONCAT('The client "', NEW.client_name, '" with the DNI "', NEW.dni, '" was created.'));
 END$$
 DELIMITER ;
