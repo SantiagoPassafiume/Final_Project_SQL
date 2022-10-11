@@ -1,4 +1,3 @@
-USE bank_passafiume;
 CREATE TABLE deleted_clients (
 	id INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
 	`date` DATE NOT NULL,
@@ -32,6 +31,14 @@ CREATE TABLE created_accounts (
 	details VARCHAR(150) NOT NULL
 );
 
+/*
+Los siguientes 2 triggers ("deleted_clients" y "created_clients") se activan al eliminar y crear un cliente respectivamente, guardando la siguiente
+información:
+1. Fecha
+2. Hora
+3. Usuario
+4. Detalles del cliente (ya sea eliminado o creado).
+*/
 
 DELIMITER $$
 CREATE TRIGGER deleted_clients
@@ -54,6 +61,14 @@ BEGIN
 END$$
 DELIMITER ;
 
+/*
+Los siguientes 2 triggers ("deleted_accounts" y "created_accounts") se activan al eliminar y crear una cuenta respectivamente, guardando la siguiente
+información:
+1. Fecha
+2. Hora
+3. Usuario
+4. Detalles de la cuenta (ya sea eliminada o creada).
+*/
 
 DELIMITER $$
 CREATE TRIGGER deleted_accounts
