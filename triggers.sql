@@ -53,7 +53,7 @@ BEFORE DELETE ON accounts
 FOR EACH ROW
 BEGIN
 	INSERT INTO deleted_accounts
-	VALUES(NULL, CURDATE(), CONCAT('The account "', NEW.account_name '" belonging to the client "', NEW.client_name, '" with the DNI "', NEW.dni, '" was created.'));
+	VALUES(NULL, CURDATE(), CONCAT('The account "', OLD.account_name, '" belonging to the client with the DNI "', OLD.dni, '" was deleted.'));
 END$$
 DELIMITER ;
 
@@ -64,6 +64,6 @@ AFTER INSERT ON accounts
 FOR EACH ROW
 BEGIN
 	INSERT INTO created_accounts
-	VALUES(NULL, CURDATE(), CONCAT('The account "', NEW.account_name '" belonging to the client "', NEW.client_name, '" with the DNI "', NEW.dni, '" was created.'));
+	VALUES(NULL, CURDATE(), CONCAT('The account "', NEW.account_name, '" belonging to the client with the DNI "', NEW.dni, '" was created.'));
 END$$
 DELIMITER ;
