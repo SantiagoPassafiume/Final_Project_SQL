@@ -9,15 +9,15 @@ VALUES(4, "ICBC"),(5, "HSBC"),(6, "Patagonia");
 -- ROLLBACK;
 -- COMMIT;
 
-INSERT INTO accounts (id, dni, id_branch, account_name) VALUES(1, 32423434, 3, "Caja de Ahorro");
-INSERT INTO accounts (id, dni, id_branch, account_name) VALUES(2, 31234334, 2, "Caja de Ahorro");
-INSERT INTO accounts (id, dni, id_branch, account_name) VALUES(3, 30232242, 1, "Caja de Ahorro");
-INSERT INTO accounts (id, dni, id_branch, account_name) VALUES(3, 32423434, 3, "Caja de Ahorro");
+INSERT INTO transactions (id, id_account, dni, amount, `date`) VALUES(1,3,32423434,55213,'2022-01-01');
+INSERT INTO transactions (id, id_account, dni, amount, `date`) VALUES(1,3,32423434,34634,'2022-01-01');
+INSERT INTO transactions (id, id_account, dni, amount, `date`) VALUES(1,3,32423434,21309,'2022-01-01');
+INSERT INTO transactions (id, id_account, dni, amount, `date`) VALUES(1,3,32423434,71231,'2022-01-01');
 SAVEPOINT inserts_1;
-INSERT INTO accounts (id, dni, id_branch, account_name) VALUES(2, 31234334, 2, "Caja de Ahorro");
-INSERT INTO accounts (id, dni, id_branch, account_name) VALUES(1, 30232242, 1, "Caja de Ahorro");
-INSERT INTO accounts (id, dni, id_branch, account_name) VALUES(2, 31234334, 2, "Caja de Ahorro");
-INSERT INTO accounts (id, dni, id_branch, account_name) VALUES(3, 32423434, 3, "Caja de Ahorro");
+INSERT INTO transactions (id, id_account, dni, amount, `date`) VALUES(1,3,32423434,21313,'2022-01-01');
+INSERT INTO transactions (id, id_account, dni, amount, `date`) VALUES(1,3,32423434,53143,'2022-01-01');
+INSERT INTO transactions (id, id_account, dni, amount, `date`) VALUES(1,3,32423434,63245,'2022-01-01');
+INSERT INTO transactions (id, id_account, dni, amount, `date`) VALUES(1,3,32423434,12313,'2022-01-01');
 SAVEPOINT inserts_2;
 
-RELEASE SAVEPOINT inserts_1;
+-- RELEASE SAVEPOINT inserts_1;
